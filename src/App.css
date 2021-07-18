@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine:400,500');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+body {
+  background-color: #333 !important;
+  color: #333;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
+  font-family: 'Tangerine', sans-serif;
 }
 
 .App-logo {
@@ -13,26 +33,102 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.New-quote {
-  cursor: pointer;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.footer {
+  width: 450px;
+  text-align: center;
+  display: block;
+  margin: 20px auto 30px auto;
+  font-size: 2em;
+  color: #fff;
+}
+
+.footer a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+}
+
+#quote-box {
+  border-radius: 3px;
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+  background-color: #fff;
+}
+
+#quote-box .quote-text {
+  text-align: center;
+  width: 450px;
+  height: auto;
+  clear: both;
+  font-weight: 500;
+  font-size: 3em;
+}
+
+#quote-box .quote-text i {
+  font-size: 1.3em;
+  margin-right: 0.4em;
+  padding: 10px;
+}
+
+#quote-box .quote-author {
+  width: 450px;
+  height: auto;
+  clear: both;
+  padding-top: 20px;
+  font-size: 1.8em;
+  text-align: right;
+}
+
+#quote-box .buttons {
+  width: 450px;
+  margin: auto;
+}
+
+#quote-box .buttons .button {
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #333;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  margin-top: 30px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#quote-box .buttons .button:hover {
+  opacity: 0.9;
+}
+
+#quote-box .buttons .button#tweet-quote,
+#quote-box .buttons .button#tumblr-quote,
+#quote-box .buttons .button#whatsapp-quote,
+#quote-box .buttons .button#copy-quote {
+  float: left;
+  padding: 0px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 1.3em;
+  margin-right: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+#quote-box .buttons .button#new-quote {
+  float: right;
+  font-size: 1.5em;
 }

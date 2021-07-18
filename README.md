@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Random quote generator
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## [Original Repository in CodePen for FreeCodeCamp exercise - Front End Development Libraries](https://codepen.io/maf248/full/XWRjLOg)
 
 ## Available Scripts
 
