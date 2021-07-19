@@ -1,16 +1,17 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faTwitter, faTumblr } from '@fortawesome/free-brands-svg-icons';
 
-function QuoteBox() {
+
+
+function QuoteBox(props) {
     return (
         <div id="quote-box">
         <div className="quote-text">
-            <FontAwesomeIcon icon={faQuoteLeft} /><span id="text"></span>
+            <FontAwesomeIcon icon={faQuoteLeft} /><span id="text">{props.quote}</span>
         </div>
-        <div className="quote-author">~ <span id="author"></span></div>
+        <div className="quote-author">~ <span id="author">{props.author}</span></div>
         <div className="buttons">
             <button className="btn btn-secondary button" id="copy-quote" title="Copy to clipboard!">
                 <FontAwesomeIcon icon={faCopy} />

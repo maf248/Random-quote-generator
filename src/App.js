@@ -1,13 +1,16 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuoteBox from './Components/Quote-box';
 
+
+
 function App() {
   return (
 <div id="wrapper" className="App">
     <img src={logo} className="App-logo" alt="logo" />
-    <QuoteBox />
+    <QuoteBox quote="Connecting..." author="Please wait." />
     <div className="footer">by <a href="https://codepen.io/maf248/">MaF!</a></div>
 </div>
   );
