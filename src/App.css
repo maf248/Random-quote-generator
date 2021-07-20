@@ -22,8 +22,21 @@ body {
   font-family: 'Tangerine', sans-serif;
 }
 
+.App-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.App-header h1 {
+  color: white;
+  font-size: 3em;
+  justify-self: center;
+  align-self: center;
+}
+
 .App-logo {
-  height: 40vmin;
+  position: relative;
+  height: 20vmin;
   pointer-events: none;
 }
 
