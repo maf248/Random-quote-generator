@@ -16,6 +16,7 @@ class QuoteBox extends Component {
         this.copyQuote = this.copyQuote.bind(this);
         this.whatsappQuote = this.whatsappQuote.bind(this);
         this.twitterQuote = this.twitterQuote.bind(this);
+        this.tumblrQuote = this.tumblrQuote.bind(this);
 	}
     
     newQuoteHandler(event) {
@@ -46,6 +47,13 @@ class QuoteBox extends Component {
     twitterQuote() {
         window.open('https://twitter.com/intent/tweet?hashtags=quotes&related=ecology&text=' +
         encodeURIComponent('"' + this.state.quote + '" ' + this.state.author), '_blank')
+    }
+    tumblrQuote() {
+        window.open('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,ecology&caption=' +
+        encodeURIComponent(this.state.author) +
+        '&content=' +
+        encodeURIComponent(this.state.quote) +
+        '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button', '_blank')
     }
 
     componentDidMount () {
@@ -85,6 +93,7 @@ class QuoteBox extends Component {
                 <Button id="copy-quote" title="Copy to clipboard!" icon="fa copy" onClick={this.copyQuote.bind(this)}/>
                 <Button id="whatsapp-quote" title="Whatsapp this quote!" target="_top" icon="fab whatsapp" onClick={this.whatsappQuote.bind(this)}/>
                 <Button id="tweet-quote" title="Tweet this quote!" target="_top" icon="fab twitter" onClick={this.twitterQuote.bind(this)}/>
+                <Button id="tumblr-quote" title="Post this quote on tumblr!" target="_blank" icon="fab tumblr" onClick={this.tumblrQuote.bind(this)}/>
 
                 <Button id="new-quote" title="Get random quote" icon="fa redo" onClick={this.newQuoteHandler.bind(this)}>New Quote</Button>
             </div>
