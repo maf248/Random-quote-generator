@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import Button from './UI/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeft, faCopy } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp, faTwitter, faTumblr } from '@fortawesome/free-brands-svg-icons';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 class QuoteBox extends Component {
 
@@ -44,13 +44,11 @@ class QuoteBox extends Component {
 			})
 
 	}
-
 	// componentDidUpdate (prevProps, prevState) {
     //     if (prevState.quote !== this.state.quote) {
             
     //     }
 	// }
-    
     render() {
         return (
             <div id="quote-box">
@@ -61,19 +59,12 @@ class QuoteBox extends Component {
             </div>
             <div className="quote-author">~ <span id="author">{this.state.author}</span></div>
             <div className="buttons">
-                <button className="btn btn-secondary button" id="copy-quote" title="Copy to clipboard!">
-                    <FontAwesomeIcon icon={faCopy} />
-                </button>
-                <button className="btn btn-secondary button" id="whatsapp-quote" title="Whatsapp this quote!" target="_top">
-                    <FontAwesomeIcon icon={faWhatsapp} />
-                </button>
-                <button className="btn btn-secondary button" id="tweet-quote" title="Tweet this quote!" target="_top">
-                    <FontAwesomeIcon icon={faTwitter} />
-                </button>
-                <button className="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank">
-                    <FontAwesomeIcon icon={faTumblr} />
-                </button>
-                <button className="button btn btn-secondary" id="new-quote" onClick={this.newQuoteHandler.bind(this)}>New quote</button>
+                <Button id="copy-quote" title="Copy to clipboard!" icon="fa copy"/>
+                <Button id="whatsapp-quote" title="Whatsapp this quote!" target="_top" icon="fab whatsapp"/>
+                <Button id="tweet-quote" title="Tweet this quote!" target="_top" icon="fab twitter"/>
+                <Button id="tumblr-quote" title="Post this quote on tumblr!" target="_blank" icon="fab tumblr"/>
+
+                <Button id="new-quote" title="Get random quote" icon="fa redo" onClick={this.newQuoteHandler.bind(this)}>New Quote</Button>
             </div>
         </div>
         );
