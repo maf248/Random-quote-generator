@@ -13,6 +13,9 @@ class QuoteBox extends Component {
             author: "Please wait."
 		};
         this.newQuoteHandler = this.newQuoteHandler.bind(this);
+        this.copyQuote = this.copyQuote.bind(this);
+        this.whatsappQuote = this.whatsappQuote.bind(this);
+        this.twitterQuote = this.twitterQuote.bind(this);
 	}
     
     newQuoteHandler(event) {
@@ -23,7 +26,27 @@ class QuoteBox extends Component {
         quote: this.state.quotes[positionRandom].quote
       });
       
-      }
+    }
+
+    copyQuote() {
+        var dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.style.opacity = 0;
+        dummy.style.height = 0;
+        dummy.value = '"' + this.state.quote + '" ' + this.state.author;
+        dummy.select();
+        document.execCommand("copy");
+        alert("Copied the quote: " + dummy.value);
+        document.body.removeChild(dummy);
+    }
+    whatsappQuote() {
+        window.open('https://api.whatsapp.com/send?text=' +
+        encodeURIComponent('"' + this.state.quote + '" ' + this.state.author), '_blank')
+    }
+    twitterQuote() {
+        window.open('https://twitter.com/intent/tweet?hashtags=quotes&related=ecology&text=' +
+        encodeURIComponent('"' + this.state.quote + '" ' + this.state.author), '_blank')
+    }
 
     componentDidMount () {
 
@@ -59,10 +82,9 @@ class QuoteBox extends Component {
             </div>
             <div className="quote-author">~ <span id="author">{this.state.author}</span></div>
             <div className="buttons">
-                <Button id="copy-quote" title="Copy to clipboard!" icon="fa copy"/>
-                <Button id="whatsapp-quote" title="Whatsapp this quote!" target="_top" icon="fab whatsapp"/>
-                <Button id="tweet-quote" title="Tweet this quote!" target="_top" icon="fab twitter"/>
-                <Button id="tumblr-quote" title="Post this quote on tumblr!" target="_blank" icon="fab tumblr"/>
+                <Button id="copy-quote" title="Copy to clipboard!" icon="fa copy" onClick={this.copyQuote.bind(this)}/>
+                <Button id="whatsapp-quote" title="Whatsapp this quote!" target="_top" icon="fab whatsapp" onClick={this.whatsappQuote.bind(this)}/>
+                <Button id="tweet-quote" title="Tweet this quote!" target="_top" icon="fab twitter" onClick={this.twitterQuote.bind(this)}/>
 
                 <Button id="new-quote" title="Get random quote" icon="fa redo" onClick={this.newQuoteHandler.bind(this)}>New Quote</Button>
             </div>
